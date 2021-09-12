@@ -1,0 +1,36 @@
+﻿@model FinalMillionare.Models.StoredData
+@{
+    ViewBag.Title = "Gaming";
+    Layout = "";
+}
+
+<html>
+<head>
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <h2 style="text-align: center">@Model.StoredQuestions.ElementAt(Model.CurId).Key</h2>
+    <div align="center">
+        @using (Html.BeginForm("/Gaming", "Millionare", FormMethod.Post))
+        {
+            <div class="row">
+                <input style="border-width: thick; font-size: 30px; width: 300px; position: relative; right: 50px"
+                       name="Working" type="submit" value="@Model.StoredQuestions.ElementAt(Model.CurId).Value.ElementAt(1 + Model.Step).Key" />
+                <input style="border-width: thick; font-size: 30px; width: 300px; position: relative; left: 50px"
+                       name="Working" type="submit" value="@Model.StoredQuestions.ElementAt(Model.CurId).Value.ElementAt(2 + Model.Step).Key" />
+            </div>
+            <br />
+            <br />
+            <div class="col-md-6 mb-3">
+                <input style="border-width: thick; font-size: 30px; width: 300px; position: relative; right: 50px "
+                       name="Working" type="submit" value="@Model.StoredQuestions.ElementAt(Model.CurId).Value.ElementAt(3 + Model.Step).Key" />
+                <input style="border-width: thick; font-size: 30px; width: 300px; position: relative; left: 50px "
+                       name="Working" type="submit" value="@Model.StoredQuestions.ElementAt(Model.CurId).Value.ElementAt(4 + Model.Step).Key" />
+            </div>
+        }
+    </div>
+</body>
+</html>
